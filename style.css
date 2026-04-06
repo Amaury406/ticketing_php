@@ -1,0 +1,60 @@
+/* style.css */
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.feature-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.feature-box h4 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.feature-box p {
+    color: #666;
+}
+
+.stat-card {
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Badges personnalisés */
+.badge {
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stat-card {
+        margin-bottom: 15px;
+    }
+    
+    .feature-box {
+        padding: 20px;
+    }
+}
+
