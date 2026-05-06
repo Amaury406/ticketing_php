@@ -19,8 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $pdo = connectDB();
         
-        // DEBUG : Afficher ce qu'on cherche
-        // echo "Recherche de l'email: $email<br>";
+       
         
         $sql = "SELECT * FROM utilisateurs WHERE email = :email";
         $stmt = $pdo->prepare($sql);
@@ -44,9 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 exit;
             } else {
                 $error = "Mot de passe incorrect";
-                // DEBUG : Tester directement
-                // $test = password_verify('admin123', $user['mot_de_passe']);
-                // echo "Test password_verify: " . ($test ? 'OK' : 'ECHEC');
+               
             }
         } else {
             $error = "Email non trouvé";

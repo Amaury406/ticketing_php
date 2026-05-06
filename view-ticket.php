@@ -229,13 +229,13 @@ if(!$ticket) {
                     ✅ Résoudre
                 </a>
             <?php endif; ?>
-            
-            <?php if($user_role == 'admin' && $ticket['statut'] != 'ferme'): ?>
-                <button class="btn btn-danger" 
-                        onclick="alert('Fonctionnalité : Supprimer le ticket (à venir)')">
-                    🗑️ Supprimer
-                </button>
-            <?php endif; ?>
+                   <?php if($user_role == 'admin' && $ticket['statut'] != 'ferme'): ?>
+                     <a href="delete-ticket.php?id=<?php echo $ticket['id']; ?>" 
+                     class="btn btn-danger"
+                     onclick="return confirm('⚠️ Supprimer définitivement ce ticket ? Cette action est irréversible !')">
+                     🗑️ Supprimer
+                    </a>
+                    <?php endif; ?>
         </div>
     </div>
     

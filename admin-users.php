@@ -16,12 +16,12 @@ $error = '';
 // AJOUTER UN UTILISATEUR
 if(isset($_POST['add_user'])) {
     $nom = trim($_POST['nom']);
-    $prenom = trim($_POST['prenom']);
+    $prenom = trim($_POST['prenom']); 
     $email = trim($_POST['email']);
     $role = $_POST['role'];
-    $password = 'admin123'; // Mot de passe par défaut
+    $password = 'admin123';
     
-    // Vérifier si email existe déjà
+    
     $stmt = $pdo->prepare("SELECT id FROM utilisateurs WHERE email = ?");
     $stmt->execute([$email]);
     
@@ -34,7 +34,7 @@ if(isset($_POST['add_user'])) {
                                VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$nom, $prenom, $email, $hash, $role]);
         
-        $message = "✅ Utilisateur ajouté avec succès ! (Mot de passe : admin123)";
+        $message = "✅ Utilisateur ajouté avec succès (Mot de passe : admin123)";
     }
 }
 
